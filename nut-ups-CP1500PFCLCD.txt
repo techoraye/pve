@@ -1,0 +1,28 @@
+❯ ssh root@192.168.0.12
+root@192.168.0.12's password:
+Linux r730 6.12.58-x64v3-xanmod1 #0~20251113.g09330b0 SMP PREEMPT_DYNAMIC Thu Nov 13 22:52:38 UTC x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Web console: https://r730.router.lan:9090/ or https://192.168.0.12:9090/
+
+Last login: Sat Nov 15 20:54:34 2025 from 192.168.0.112
+root@r730:~# nut-scanner -U
+Scanning USB bus.
+[nutdev1]
+        driver = "usbhid-ups"
+        port = "auto"
+        vendorid = "0764"
+        productid = "0601"
+        product = "CP1500PFCLCDa"
+        serial = "CXXQU7005185"
+        vendor = "CPS"
+        bus = "003"
+        device = "002"
+        busport = "002"
+        ###NOTMATCHED-YET###bcdDevice = "0200"
+root@r730:~#

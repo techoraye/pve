@@ -78,6 +78,7 @@ dkms install .
 
 
 
+apt-get install linux-xanmod-lts-x64v3 nut libneon27 openvswitch-switch ipmiutil ipmitool nano btop htop gnupg2 curl net-tools driverctl
 
 
 

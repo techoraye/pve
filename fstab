@@ -1,0 +1,20 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a device; this may
+# be used with UUID= as a more robust way to name devices that works even if
+# disks are added and removed. See fstab(5).
+#
+# <file system>             <mount point>  <type>  <options>  <dump>  <pass>
+UUID=49F9-B1F7                            /boot/efi      vfat    defaults,umask=0077 0 2
+UUID=04045b3f-1c39-4f07-8223-e36028b5f510 /              btrfs   subvol=/@,defaults,noatime,compress=zstd,commit=120 0 0
+UUID=04045b3f-1c39-4f07-8223-e36028b5f510 /home          btrfs   subvol=/@home,defaults,noatime,compress=zstd,commit=120 0 0
+UUID=04045b3f-1c39-4f07-8223-e36028b5f510 /root          btrfs   subvol=/@root,defaults,noatime,compress=zstd,commit=120 0 0
+UUID=04045b3f-1c39-4f07-8223-e36028b5f510 /srv           btrfs   subvol=/@srv,defaults,noatime,compress=zstd,commit=120 0 0
+UUID=04045b3f-1c39-4f07-8223-e36028b5f510 /var/cache     btrfs   subvol=/@cache,defaults,noatime,compress=zstd,commit=120 0 0
+UUID=04045b3f-1c39-4f07-8223-e36028b5f510 /var/tmp       btrfs   subvol=/@tmp,defaults,noatime,compress=zstd,commit=120 0 0
+UUID=04045b3f-1c39-4f07-8223-e36028b5f510 /var/log       btrfs   subvol=/@log,defaults,noatime,compress=zstd,commit=120 0 0
+tmpfs                                     /tmp           tmpfs   defaults,noatime,mode=1777 0 0
+UUID=04045b3f-1c39-4f07-8223-e36028b5f510 /etc/libvirt              btrfs   subvol=/@libvirt-etc,defaults,noatime,compress=zstd,commit=120 0 0
+UUID=04045b3f-1c39-4f07-8223-e36028b5f510 /var/lib/libvirt              btrfs   subvol=/@libvirt,defaults,noatime,compress=zstd,commit=120 0 0
+//r710/d1	/d1	  cifs	user,dir_mode=0777,noperm,ip=192.168.0.9,password=Mialou24,file_mode=0777,username=eti,vers=3.0,uid=0,iocharset=utf8,noauto,x-gvfs-show	0	0
+192.168.0.9:/H1/p1                          /p1                nfs           user,nfsvers=3,nofail,x-gvfs-show,noauto                          0 0

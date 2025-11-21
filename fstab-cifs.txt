@@ -1,0 +1,302 @@
+ pro:
+
+ sudo pacman -Syu base-devel git bison byacc flex patch pkgconf m4 cmake system-monitoring-center gwenview qastools jdk8-openjdk icedtea-web libappindicator-gtk3 psensor rtirq yay brave-bin piper game-devices-udev flatpak-xdg-utils flatpak-kcm plasma-meta kde-utilities-meta kde-system-meta garuda-settings-manager garuda-system-maintenance garuda-wallpapers garuda-video-linux-config garuda-zsh-config adwaita-fonts materia-gtk-theme garuda-boot-options garuda-assistant unifetch --needed
+
+
+
+ sudo pacman -Syu base-devel git bison byacc flex patch pkgconf m4 cmake system-monitoring-center gwenview qastools jdk8-openjdk icedtea-web libappindicator-gtk3 psensor yay brave-bin piper game-devices-udev plasma-meta kde-utilities-meta kde-system-meta garuda-wallpapers garuda-video-linux-config garuda-zsh-config adwaita-fonts materia-gtk-theme garuda-boot-options unifetch --needed
+
+
+
+
+
+ sudo pacman -Syu base-devel git bison byacc flex patch pkgconf m4 cmake system-monitoring-center gwenview qastools jdk8-openjdk icedtea-web libappindicator-gtk3 psensor rtirq yay brave-bin piper game-devices-udev flatpak-xdg-utils flatpak-kcm plasma-meta kde-utilities-meta kde-system-meta garuda-system-maintenance garuda-wallpapers garuda-video-linux-config garuda-zsh-config adwaita-fonts materia-gtk-theme garuda-boot-options garuda-assistant unifetch --needed
+
+
+
+
+
+
+
+
+sudo pacman -Syu base-devel git bison byacc flex patch pkgconf m4 cmake system-monitoring-center gwenview qastools jdk8-openjdk icedtea-web libappindicator-gtk3 psensor yay brave-bin piper game-devices-udev flatpak-xdg-utils flatpak-kcm plasma-meta kde-utilities-meta kde-system-meta adwaita-fonts materia-gtk-theme cachy-update --needed
+
+
+
+
+https://aur.chaotic.cx/docs
+
+
+
+gamer:
+
+
+sudo pacman -Syu base-devel git bison byacc flex patch pkgconf m4 cmake system-monitoring-center gwenview qastools jdk8-openjdk icedtea-web libappindicator-gtk3 psensor yay brave-bin piper game-devices-udev flatpak-xdg-utils flatpak-kcm plasma-meta kde-utilities-meta kde-system-meta adwaita-fonts materia-gtk-theme cachy-update pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber helvum pipewire-v4l2 pipewire-zeroconf pipewire-roc pipewire-libcamera cachyos-gaming-meta--needed
+
+
+
+
+
+
+master:
+sudo pacman -Syyu base-devel git bison byacc flex patch pkgconf m4 cmake system-monitoring-center gwenview qastools jdk8-openjdk icedtea-web libappindicator-gtk3 psensor yay brave-bin piper game-devices-udev flatpak-xdg-utils flatpak-kcm plasma-meta kde-utilities-meta kde-system-meta adwaita-fonts materia-gtk-theme cachy-update pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber helvum pipewire-v4l2 pipewire-zeroconf pipewire-roc pipewire-libcamera peazip snapper-tools fuse2 fuse2fs nm-connection-editor net-tools cantarell-fonts filezilla pcsc-tools cachyos-gaming-meta --needed
+
+
+sudo pacman -Syyu base-devel git bison byacc flex patch pkgconf m4 cmake system-monitoring-center gwenview qastools jdk8-openjdk icedtea-web libappindicator-gtk3 psensor yay brave-bin piper game-devices-udev flatpak-xdg-utils flatpak-kcm plasma-meta kde-utilities-meta kde-system-meta adwaita-fonts materia-gtk-theme cachy-update pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber helvum pipewire-v4l2 pipewire-zeroconf pipewire-roc pipewire-libcamera peazip snapper-tools fuse2 fuse2fs nm-connection-editor net-tools cantarell-fonts filezilla pcsc-tools --needed
+
+
+
+
+
+client:
+
+ sudo pacman -Syu base-devel git bison byacc flex patch pkgconf m4 cmake system-monitoring-center gwenview qastools libappindicator-gtk3 rtirq yay brave-bin game-devices-udev flatpak-xdg-utils flatpak-kcm plasma-meta kde-utilities-meta kde-system-meta garuda-system-maintenance garuda-wallpapers garuda-video-linux-config garuda-zsh-config adwaita-fonts materia-gtk-theme garuda-boot-options unifetch garuda-assistant --needed
+
+
+
+
+sudo pacman -Syu base-devel git bison byacc flex patch pkgconf m4 cmake system-monitoring-center gwenview qastools jdk8-openjdk icedtea-web libappindicator-gtk3 psensor yay brave-bin piper game-devices-udev flatpak-xdg-utils flatpak-kcm plasma-meta kde-utilities-meta kde-system-meta adwaita-fonts materia-gtk-theme cachy-update pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber helvum pipewire-v4l2 pipewire-zeroconf pipewire-roc pipewire-libcamera --needed
+
+
+
+
+
+
+curl -fsS https://dl.brave.com/install.sh | sh
+
+
+
+apt-get install aptitude synaptic gwenview qas* psensor piper rtirq-init kubuntu-restricted-addons kubuntu-restricted-extras ubuntustudio-default-settings ubuntustudio-fonts ubuntustudio-look ubuntustudio-lowlatency-settings ubuntustudio-menu ubuntustudio-performance-tweaks ubuntustudio-pipewire-config curl htop btop lm-sensors xsensors
+
+sensors-detect
+
+
+sudo apt install curl
+
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+sudo apt update
+
+sudo apt install brave-browser
+
+
+
+
+
+
+
+GRUB_CMDLINE_LINUX_DEFAULT="intel_iommu=on pci=realloc iommu=pt pci=assign-busses module_blacklist=nouveau nvidia-drm.modeset=1"
+
+
+
+
+
+
+
+
+
+GRUB_CMDLINE_LINUX_DEFAULT="intel_iommu=on pci=realloc iommu=pt module_blacklist=nouveau nvidia-drm.modeset=1"
+
+
+
+
+
+
+ GRUB_CMDLINE_LINUX_DEFAULT="intel_iommu=on pci=realloc iommu=pt pci=assign-busses module_blacklist=nouveau threadirqs nvidia-drm.modeset=1"
+
+
+ GRUB_CMDLINE_LINUX_DEFAULT="intel_iommu=on pci=realloc iommu=pt pci=assign-busses module_blacklist=nouveau threadirqs"
+
+
+GRUB_CMDLINE_LINUX_DEFAULT="intel_iommu=on pci=realloc iommu=pt threadirqs"
+
+GRUB_CMDLINE_LINUX_DEFAULT="amd_iommu=on pci=realloc iommu=pt threadirqs"
+
+
+
+
+ GRUB_CMDLINE_LINUX_DEFAULT="vfio-pci.ids=8086:1521 amd_iommu=pt pci=realloc pci=assign-busses module_blacklist=nouveau vfio-pci.ids=10de:2206 vfio-pci.ids=10de:1aef vfio-pci.ids=10de:1b38"
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://unix.stackexchange.com/questions/322372/create-fstab-entry-with-777-permissions-and-no-auto-mount
+
+https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/
+
+https://timlehr.com/auto-mount-samba-cifs-shares-via-fstab-on-linux/
+
+//ffjdqnap/download	/media/smbdownload	cifs	uid=0,ip=192.168.1.30,vers=3,iocharset=utf8,noperm,password=Mialou24,file_mode=0777,dir_mode=0777,username=eti	0	0
+
+//ffjdqnap/multimedia	/media/smbmedia	cifs	user,username=eti,password=Mialou24	0	0
+
+//ffjdqnap/multimedia	/media/smbmedia	cifs	uid=0,ip=192.168.1.30,iocharset=utf8,noperm,password=Mialou24,file_mode=0777,dir_mode=0777,username=eti	0	0
+
+
+
+
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda1 during installation
+UUID=9413dc55-6e7f-4800-909a-739e4ddf2094 /               ext4    errors=remount-ro 0       1
+# /home was on /dev/sda4 during installation
+UUID=e1a2e4c2-f993-465c-bcb0-b1db3f0332cc /home           ext4    defaults        0       2
+# /media/xfsssd was on /dev/sda3 during installation
+UUID=7836682f-8be3-4be0-a590-452ca6b13263 /media/xfsssd   xfs     defaults        0       0
+# /tmp was on /dev/sda5 during installation
+UUID=87849380-f621-407f-a44f-d4310533f304 /tmp            ext4    defaults        0       2
+# /usr was on /dev/sda7 during installation
+UUID=9efdef98-a9d7-4895-8e68-a6eae9a96da2 /usr            ext4    defaults        0       2
+# /var was on /dev/sda6 during installation
+UUID=762538d7-dee4-4c5d-91ba-4d104331d51d /var            ext4    defaults        0       2
+/swapfile                                 none            swap    sw              0       0
+//ffjdqnap/download	/media/smbdownload	cifs	uid=0,ip=192.168.1.30,iocharset=utf8,noperm,password=Mialou24,file_mode=0777,dir_mode=0777,username=eti,user,noauto	0	0
+//ffjdqnap/multimedia	/media/smbmedia	cifs	user,dir_mode=0777,noperm,ip=192.168.1.30,password=Mialou24,file_mode=0777,username=eti,uid=0,iocharset=utf8,noauto	0	0
+
+//r710/f1	/run/media/smbf1	cifs	user,dir_mode=0777,noperm,ip=192.168.0.11,password=Mialou24,file_mode=0777,username=eti,uid=0,iocharset=utf8,noauto	0	0
+
+
+
+//r710/f1	/run/media/smbf1	cifs	user,dir_mode=0777,noperm,ip=192.168.0.11,password=Mialou24,file_mode=0777,username=eti,uid=0,iocharset=utf8,noauto,x-gvfs-show	0	0
+
+//omnios/1TB	/d1	   cifs	   user,dir_mode=0777,noperm,ip=192.168.1.7,password=Mialou24,file_mode=0777,username=eti,uid=0,iocharset=utf8,noauto,x-gvfs-show	0	0
+
+
+
+
+//r710/d1	/d1	  cifs	user,dir_mode=0777,noperm,ip=192.168.0.9,password=Mialou24,file_mode=0777,username=eti,vers=3.0,uid=0,iocharset=utf8,noauto,x-gvfs-show	0	0
+
+
+
+
+
+192.168.0.9:/H1/d1	/mnt	nfs	user,nofail,noauto	0	0
+
+
+
+192.168.0.9:/H1/d1	/mnt	nfs	user,nofail,noauto,x-gvfs-show	0	0
+
+
+192.168.0.9:/H1/d1	/mnt	nfs	user,nfsvers=3,nofail,x-gvfs-show,noauto	0	0
+
+
+192.168.0.9:/H1/d1	/mnt	nfs	user,nfsvers=3,nofail,x-gvfs-show,noauto	0	0
+
+
+
+
+
+
+
+
+
+
+nvme
+
+
+
+
+
+BusyBox v1.35.0 (Debian 1:1.35.0-4+b3) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+df -h
+Filesystem                Size      Used Available Use% Mounted on
+tmpfs                     6.3G    732.0K      6.3G   0% /run
+devtmpfs                 31.3G         0     31.3G   0% /dev
+/dev/sr1                 14.1G     14.1G         0 100% /cdrom
+/dev/nvme0n1p2          931.3G      3.8M    929.3G   0% /target
+/dev/nvme0n1p1          511.0M      4.0K    511.0M   0% /target/boot/efi
+umount /target/boot/efi
+umount /target
+ mount /dev/nvme0n1p2 /mnt/
+cd /mnt
+ ls
+@rootfs
+ mv @rootfs @
+ ls
+@
+ btrfs subvolume create @home
+btrfs subvolume create @docker
+btrfs subvolume create @libvirt
+ ls
+@        @docker  @home
+ mount -o rw,noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/nvme0n1p2 /target
+ mkdir -p /target/boot/efi
+ mkdir -p /target/home
+ mkdir -p /target/var/lib/docker
+ mkdir -p /target/var/lib/libvirt
+ mount -o rw,noatime,space_cache=v2,nodatacow,ssd,discard=async,subvol=@home /dev/nvme0n1p2 /target/home
+mount -o rw,noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@docker /dev/nvme0n1p2 /target/var/lib/docker
+mount -o rw,noatime,space_cache=v2,nodatacow,ssd,discard=async,subvol=@libvirt /dev/nvme0n1p2 /target/var/lib/libvirt
+  mount /dev/nvme0n1p1 /target/boot/efi
+
+ nano /target/etc/fstab
+
+
+
+
+
+
+
+
+
+
+
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a device; this may
+# be used with UUID= as a more robust way to name devices that works even if
+# disks are added and removed. See fstab(5).
+#
+# <file system>             <mount point>  <type>  <options>  <dump>  <pass>
+UUID=38AA-DB54                            /boot/efi      vfat    defaults,umask=0077 0 2
+UUID=3fb11bb3-5d5c-46c7-9f70-558c10055caa /              btrfs   subvol=/@,defaults,noatime,compress=zstd 0 0
+UUID=3fb11bb3-5d5c-46c7-9f70-558c10055caa /home          btrfs   subvol=/@home,defaults,noatime,compress=zstd 0 0
+UUID=3fb11bb3-5d5c-46c7-9f70-558c10055caa /root          btrfs   subvol=/@root,defaults,noatime,compress=zstd 0 0
+UUID=3fb11bb3-5d5c-46c7-9f70-558c10055caa /srv           btrfs   subvol=/@srv,defaults,noatime,compress=zstd 0 0
+UUID=3fb11bb3-5d5c-46c7-9f70-558c10055caa /var/cache     btrfs   subvol=/@cache,defaults,noatime,compress=zstd 0 0
+UUID=3fb11bb3-5d5c-46c7-9f70-558c10055caa /var/log       btrfs   subvol=/@log,defaults,noatime,compress=zstd 0 0
+UUID=3fb11bb3-5d5c-46c7-9f70-558c10055caa /var/tmp       btrfs   subvol=/@tmp,defaults,noatime,compress=zstd 0 0
+UUID=bf02eae6-4785-4bed-92b5-156e5947d357 swap           swap    defaults   0 0
+tmpfs                                     /tmp           tmpfs   defaults,noatime,mode=1777 0 0
+#192.168.0.9:/H1/d1                          /d1               nfs           user,nfsvers=3,nofail,x-gvfs-show,noauto                          0 0
+//r710/d1	/d1	  cifs	user,dir_mode=0777,noperm,ip=192.168.0.9,password=Mialou24,file_mode=0777,username=eti,vers=3.0,uid=0,iocharset=utf8,noauto,x-gvfs-show	0	0
+192.168.0.9:/H1/p1                          /p1                nfs           user,nfsvers=3,nofail,x-gvfs-show,noauto                          0 0
+UUID=3fb11bb3-5d5c-46c7-9f70-558c10055caa /var/lib/libvirt              btrfs   subvol=/@libvirt,rw,noatime,space_cache=v2,nodatacow,ssd,discard=async 0 0
+UUID=3fb11bb3-5d5c-46c7-9f70-558c10055caa /etc/libvirt              btrfs   subvol=/@libvirt-etc,defaults,noatime,compress=zstd 0 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

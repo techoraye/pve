@@ -1,0 +1,26 @@
+
+
+https://aur.chaotic.cx/docs
+
+
+
+
+gaming:
+
+sudo pacman -Syyu base-devel git bison byacc flex patch pkgconf m4 cmake system-monitoring-center gwenview qastools jdk8-openjdk icedtea-web libappindicator-gtk3 psensor yay brave-bin piper game-devices-udev flatpak-xdg-utils flatpak-kcm plasma-meta kde-utilities-meta kde-system-meta adwaita-fonts materia-gtk-theme cachy-update pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber helvum pipewire-v4l2 pipewire-zeroconf pipewire-roc pipewire-libcamera peazip snapper-tools fuse2 fuse2fs nm-connection-editor net-tools cantarell-fonts filezilla pcsc-tools cachyos-gaming-meta --needed
+
+
+
+standar:
+
+sudo pacman -Syyu base-devel git bison byacc flex patch pkgconf m4 cmake system-monitoring-center gwenview qastools jdk8-openjdk icedtea-web libappindicator-gtk3 psensor yay brave-bin piper game-devices-udev flatpak-xdg-utils flatpak-kcm plasma-meta kde-utilities-meta kde-system-meta adwaita-fonts materia-gtk-theme cachy-update pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber helvum pipewire-v4l2 pipewire-zeroconf pipewire-roc pipewire-libcamera peazip snapper-tools fuse2 fuse2fs nm-connection-editor net-tools cantarell-fonts filezilla pcsc-tools --needed
+
+
+
+optionnel:
+
+# Sync the BlackArch repository
+curl -s https://blackarch.org/strap.sh | sudo bash
+
+# Install all BlackArch tools or specific ones
+sudo pacman -S blackarch

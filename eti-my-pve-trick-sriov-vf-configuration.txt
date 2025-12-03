@@ -97,8 +97,10 @@ apt-get install openvswitch-switch nut openvswitch-doc python3-netaddr python-so
 apt-get install nut ipmiutil ipmitool htop nano btop libneon27 linux-image-amd64
 
 
-apt-get install cockpit-bridge cockpit-system cockpit-ws cockpit-pcp pcp htop nano btop cockpit-storaged cockpit-networkmanager cockpit-sosreport cockpit-packagekit systemd-timesyncd
+apt-get install cockpit-bridge cockpit-system cockpit-ws cockpit-pcp pcp htop nano btop cockpit-storaged cockpit-networkmanager cockpit-sosreport cockpit-packagekit systemd-
 
+
+apt-get install cockpit-bridge cockpit-system cockpit-ws cockpit-pcp pcp htop nano btop cockpit-packagekit
 
 systemctl enable --now cockpit.socket
 

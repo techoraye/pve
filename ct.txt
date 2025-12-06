@@ -42,3 +42,4 @@ ln -s /usr/bin/lesspipe  /opt/allowed-bin/
 ln -s /usr/bin/nproc     /opt/allowed-bin/
 ln -s /usr/bin/mkdir     /opt/allowed-bin/
 ln -s /usr/bin/rm        /opt/allowed-bin/
+ln -s /usr/bin/ssh       /opt/allowed-bin/

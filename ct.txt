@@ -1,1 +1,44 @@
 apt-get install nano btop htop gnupg2 curl gh git byobu
+sudo apt update
+sudo apt install -y \
+    bc bison build-essential curl flex g++-multilib gcc-multilib \
+    git gnupg gperf imagemagick lib32ncurses-dev lib32readline-dev \
+    lib32z1-dev libncurses-dev libsdl1.2-dev libssl-dev \
+    libxml2 libxml2-utils lzop openjdk-11-jdk pngcrush \
+    schedtool squashfs-tools xsltproc zip zlib1g-dev \
+    python-is-python3 repo ccache
+sudo byobu-enable --system
+sudo sed -i '/# Byobu system-wide auto-start/,$d' /etc/profile
+sudo bash -c 'cat >> /etc/profile' << "EOF"
+# Byobu system-wide auto-start
+if [ "$TERM" != "screen" ] && [ "$TERM" != "screen-256color" ] && [ -n "$PS1" ]; then
+    exec byobu
+fi
+EOF
+sed -i '/Global command lockdown for all non-root users/,+5d' /etc/profile
+mkdir -p /opt/allowed-bin
+chmod 755 /opt/allowed-bin
+ln -s /bin/ls           /opt/allowed-bin/
+ln -s /usr/bin/nano     /opt/allowed-bin/
+ln -s /usr/bin/sed      /opt/allowed-bin/
+ln -s /usr/bin/clear    /opt/allowed-bin/
+ln -s /usr/bin/bash     /opt/allowed-bin/
+ln -s /usr/bin/git      /opt/allowed-bin/
+ln -s /usr/bin/make     /opt/allowed-bin/
+ln -s /usr/bin/python3  /opt/allowed-bin/
+ln -s /usr/bin/java     /opt/allowed-bin/
+ln -s /usr/bin/javac    /opt/allowed-bin/
+ln -s /usr/bin/ccache   /opt/allowed-bin/
+ln -s /usr/bin/zip      /opt/allowed-bin/
+ln -s /usr/bin/unzip    /opt/allowed-bin/
+ln -s /usr/bin/curl     /opt/allowed-bin/
+ln -s /usr/bin/rsync    /opt/allowed-bin/
+ln -s /usr/bin/repo     /opt/allowed-bin/
+ln -s /usr/bin/basename /opt/allowed-bin/
+ln -s /usr/bin/dircolors /opt/allowed-bin/
+ln -s /usr/bin/dirname   /opt/allowed-bin/
+ln -s /usr/bin/gh        /opt/allowed-bin/
+ln -s /usr/bin/lesspipe  /opt/allowed-bin/
+ln -s /usr/bin/nproc     /opt/allowed-bin/
+ln -s /usr/bin/mkdir     /opt/allowed-bin/
+ln -s /usr/bin/rm        /opt/allowed-bin/

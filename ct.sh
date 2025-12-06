@@ -117,7 +117,11 @@ sudo sh -c 'cat > /etc/motd << "EOF"
 
 \033[1;33mDashboard:\033[0m     http://carbonforge.techoraye.com/  \033[2m(coming soon)\033[0m
 
+\033[1;36mNeed a package?\033[0m  
+\033[1;37mContact:\033[0m       \033[1;32m@techoraye\033[0m on Discord or Telegram.
+
 \033[1;31mUnauthorized access is prohibited.\033[0m
 \033[2mAll activity is logged.\033[0m
 EOF'
+
 sudo reboot

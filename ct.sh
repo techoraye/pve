@@ -48,6 +48,9 @@ ln -s /usr/bin/nproc     /opt/allowed-bin/
 ln -s /usr/bin/mkdir     /opt/allowed-bin/
 ln -s /usr/bin/rm        /opt/allowed-bin/
 ln -s /usr/bin/ssh       /opt/allowed-bin/
+ln -s /usr/bin/7z        /opt/allowed-bin/
+ln -s /usr/bin/rsync     /opt/allowed-bin/
+
 cat << 'EOF' >> /etc/profile
 # ===== Global command lockdown for all non-root users =====
 if [ "$USER" != "root" ]; then

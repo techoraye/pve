@@ -105,11 +105,19 @@ EOF
 chmod +x /usr/local/bin/whitelist
 sudo chmod -x /etc/update-motd.d/*
 sudo sh -c 'cat > /etc/motd << "EOF"
-===========================================
-      Welcome to CarbonForge Server
-       Android ROM Builder • SSH Access
-===========================================
+\033[1;38;5;51m───────────────────────────────────────────────\033[0m
+        \033[1;38;5;47mCarbonForge Build Infrastructure\033[0m
+       \033[1;38;5;39mAndroid ROM Builder • Secure SSH Node\033[0m
+\033[1;38;5;51m───────────────────────────────────────────────\033[0m
 
-Authorized use only. Activity is logged.
+\033[1;37mHostname:\033[0m      \033[1;32m$(hostname)\033[0m
+\033[1;37mUptime:\033[0m        \033[1;32m$(uptime -p)\033[0m
+\033[1;37mLoad:\033[0m          \033[1;32m$(cut -d " " -f1-3 /proc/loadavg)\033[0m
+\033[1;37mIP Address:\033[0m    \033[1;32m$(hostname -I | awk "{print \$1}")\033[0m
+
+\033[1;33mDashboard:\033[0m     http://carbonforge.techoraye.com/  \033[2m(coming soon)\033[0m
+
+\033[1;31mUnauthorized access is prohibited.\033[0m
+\033[2mAll activity is logged.\033[0m
 EOF'
 sudo reboot

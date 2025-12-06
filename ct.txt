@@ -1,5 +1,8 @@
-apt-get install nano btop htop gnupg2 curl gh git byobu
+#!/bin/bash
+
 sudo apt update
+apt-get install nano btop htop gnupg2 curl gh git byobu
+
 sudo apt install -y \
     bc bison build-essential curl flex g++-multilib gcc-multilib \
     git gnupg gperf imagemagick lib32ncurses-dev lib32readline-dev \
@@ -7,6 +10,7 @@ sudo apt install -y \
     libxml2 libxml2-utils lzop openjdk-11-jdk pngcrush \
     schedtool squashfs-tools xsltproc zip zlib1g-dev \
     python-is-python3 repo ccache
+
 sudo byobu-enable --system
 sudo sed -i '/# Byobu system-wide auto-start/,$d' /etc/profile
 sudo bash -c 'cat >> /etc/profile' << "EOF"
@@ -15,6 +19,7 @@ if [ "$TERM" != "screen" ] && [ "$TERM" != "screen-256color" ] && [ -n "$PS1" ];
     exec byobu
 fi
 EOF
+
 sed -i '/Global command lockdown for all non-root users/,+5d' /etc/profile
 mkdir -p /opt/allowed-bin
 chmod 755 /opt/allowed-bin
@@ -43,3 +48,55 @@ ln -s /usr/bin/nproc     /opt/allowed-bin/
 ln -s /usr/bin/mkdir     /opt/allowed-bin/
 ln -s /usr/bin/rm        /opt/allowed-bin/
 ln -s /usr/bin/ssh       /opt/allowed-bin/
+cat << 'EOF' >> /etc/profile
+# ===== Global command lockdown for all non-root users =====
+if [ "$USER" != "root" ]; then
+    PATH=/opt/allowed-bin
+    export PATH
+fi
+EOF
+source /etc/profile
+cat << 'EOF' > /usr/local/bin/whitelist
+#!/bin/bash
+
+WHITELIST_DIR="/opt/allowed-bin"
+
+usage() {
+    echo "Usage:"
+    echo "  whitelist add <command>"
+    echo "  whitelist remove <command>"
+    echo "  whitelist list"
+    exit 1
+}
+
+mkdir -p "$WHITELIST_DIR"
+
+case "$1" in
+
+    add)
+        CMD="$2"
+        [ -z "$CMD" ] && usage
+        CMD_PATH=$(command -v "$CMD")
+        [ -z "$CMD_PATH" ] && { echo "Command not found."; exit 1; }
+        ln -sf "$CMD_PATH" "$WHITELIST_DIR/"
+        echo "Whitelisted: $CMD"
+        ;;
+
+    remove)
+        CMD="$2"
+        [ -z "$CMD" ] && usage
+        rm -f "$WHITELIST_DIR/$CMD"
+        echo "Removed: $CMD"
+        ;;
+
+    list)
+        ls -1 "$WHITELIST_DIR"
+        ;;
+
+    *)
+        usage
+        ;;
+esac
+EOF
+chmod +x /usr/local/bin/whitelist
+sudo reboot

@@ -133,7 +133,7 @@ echo -e "${WHITE}Uptime:${RESET}        ${GREEN}$(uptime -p)${RESET}"
 echo -e "${WHITE}Load:${RESET}          ${GREEN}$(cut -d ' ' -f1-3 /proc/loadavg)${RESET}"
 echo -e "${WHITE}IP Address:${RESET}    ${GREEN}$(hostname -I | awk '{print $1}')${RESET}"
 echo
-echo -e "${YELLOW}Dashboard:${RESET}     http://carbonforge.techoraye.com/  ${GREY}(coming soon)${RESET}"
+echo -e "${YELLOW}Dashboard:${RESET}     https://carbonforge.techoraye.com/  ${GREY}(coming soon)${RESET}"
 echo
 echo -e "${RED}Unauthorized access is prohibited.${RESET}"
 echo -e "${GREY}All activity is logged.${RESET}"

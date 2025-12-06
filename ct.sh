@@ -104,4 +104,12 @@ esac
 EOF
 chmod +x /usr/local/bin/whitelist
 sudo chmod -x /etc/update-motd.d/*
+sudo sh -c 'cat > /etc/motd << "EOF"
+===========================================
+      Welcome to CarbonForge Server
+       Android ROM Builder • SSH Access
+===========================================
+
+Authorized use only. Activity is logged.
+EOF'
 sudo reboot

@@ -51,6 +51,9 @@ ln -s /usr/bin/ssh       /opt/allowed-bin/
 ln -s /usr/bin/7z        /opt/allowed-bin/
 ln -s /usr/bin/rsync     /opt/allowed-bin/
 ln -s /usr/bin/mktemp    /opt/allowed-bin/
+ln -s /usr/bin/cut       /opt/allowed-bin/
+ln -s /usr/bin/uptime    /opt/allowed-bin/
+ln -s /usr/bin/hostname  /opt/allowed-bin/
 
 cat << 'EOF' >> /etc/profile
 # ===== Global command lockdown for all non-root users =====
@@ -92,6 +95,29 @@ case "$1" in
         rm -f "$WHITELIST_DIR/$CMD"
         echo "Removed: $CMD"
         ;;
+sudo bash -c $'chmod +x /etc/update-motd.d/* 2>/dev/null; cat > /etc/update-motd.d/00-carbonforge << "EOF"
+#!/bin/bash
+echo -e "\x1b[1;38;5;51m───────────────────────────────────────────────\x1b[0m"
+echo -e "        \x1b[1;38;5;47mCarbonForge Build Infrastructure\x1b[0m"
+echo -e "       \x1b[1;38;5;39mAndroid ROM Builder • Secure SSH Node\x1b[0m"
+echo -e "\x1b[1;38;5;51m───────────────────────────────────────────────\x1b[0m"
+echo
+echo -e "\x1b[1;37mHostname:\x1b[0m      \x1b[1;32mCarbonForge\x1b[0m"
+echo -e "\x1b[1;37mUptime:\x1b[0m        \x1b[1;32m$(uptime -p)\x1b[0m"
+echo -e "\x1b[1;37mLoad:\x1b[0m          \x1b[1;32m$(cut -d \" \" -f1-3 /proc/loadavg)\x1b[0m"
+echo -e "\x1b[1;37mIP Address:\x1b[0m    \x1b[1;32m$(hostname -I | awk '{print \$1}')\x1b[0m"
+echo
+echo -e "\x1b[1;33mDashboard:\x1b[0m     http://carbonforge.techoraye.com/  \x1b[2m(coming soon)\x1b[0m"
+echo
+echo -e "\x1b[1;36mNeed a package?\x1b[0m"
+echo -e "\x1b[1;37mContact:\x1b[0m       \x1b[1;32m@techoraye\x1b[0m on Discord or Telegram."
+echo
+echo -e "\x1b[1;31mUnauthorized access is prohibited.\x1b[0m"
+echo -e "\x1b[2mAll activity is logged.\x1b[0m"
+EOF
+chmod +x /etc/update-motd.d/00-carbonforge
+rm -f /etc/motd 2>/dev/null
+'
 
     list)
         ls -1 "$WHITELIST_DIR"
@@ -110,25 +136,5 @@ locale
 
 chmod +x /usr/local/bin/whitelist
 sudo chmod -x /etc/update-motd.d/*
-sudo bash -c $'cat > /etc/motd << "EOF"
-\x1b[1;38;5;51m───────────────────────────────────────────────\x1b[0m
-        \x1b[1;38;5;47mCarbonForge Build Infrastructure\x1b[0m
-       \x1b[1;38;5;39mAndroid ROM Builder • Secure SSH Node\x1b[0m
-\x1b[1;38;5;51m───────────────────────────────────────────────\x1b[0m
 
-\x1b[1;37mHostname:\x1b[0m      \x1b[1;32m$(hostname)\x1b[0m
-\x1b[1;37mUptime:\x1b[0m        \x1b[1;32m$(uptime -p)\x1b[0m
-\x1b[1;37mLoad:\x1b[0m          \x1b[1;32m$(cut -d " " -f1-3 /proc/loadavg)\x1b[0m
-\x1b[1;37mIP Address:\x1b[0m    \x1b[1;32m$(hostname -I | awk "{print \$1}")\x1b[0m
-
-\x1b[1;33mDashboard:\x1b[0m     http://carbonforge.techoraye.com/  \x1b[2m(coming soon)\x1b[0m
-
-\x1b[1;36mNeed a package?\x1b[0m  
-\x1b[1;37mContact:\x1b[0m       \x1b[1;32m@techoraye\x1b[0m on Discord or Telegram.
-
-\x1b[1;31mUnauthorized access is prohibited.\x1b[0m
-\x1b[2mAll activity is logged.\x1b[0m
-EOF'
-sudo hostnamectl set-hostname CarbonForge
-echo "127.0.1.1   CarbonForge" | sudo tee -a /etc/hosts
 sudo reboot

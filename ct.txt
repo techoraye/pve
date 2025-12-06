@@ -1,1 +1,1 @@
-apt-get install libneon27 nano btop htop gnupg2 curl libncursesw5 libncurses5 gh git byobu
+apt-get install nano btop htop gnupg2 curl gh git byobu

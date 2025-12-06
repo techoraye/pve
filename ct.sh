@@ -102,26 +102,33 @@ case "$1" in
         ;;
 esac
 EOF
+sudo locale-gen en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+sudo bash -c 'echo -e "LANG=en_US.UTF-8\nLC_ALL=en_US.UTF-8" > /etc/default/locale'
+sudo locale-gen en_US.UTF-8
+locale
+
 chmod +x /usr/local/bin/whitelist
 sudo chmod -x /etc/update-motd.d/*
-sudo bash -c "cat > /etc/motd << 'EOF'
-\e[1;38;5;51m───────────────────────────────────────────────\e[0m
-        \e[1;38;5;47mCarbonForge Build Infrastructure\e[0m
-       \e[1;38;5;39mAndroid ROM Builder • Secure SSH Node\e[0m
-\e[1;38;5;51m───────────────────────────────────────────────\e[0m
+sudo bash -c $'cat > /etc/motd << "EOF"
+\x1b[1;38;5;51m───────────────────────────────────────────────\x1b[0m
+        \x1b[1;38;5;47mCarbonForge Build Infrastructure\x1b[0m
+       \x1b[1;38;5;39mAndroid ROM Builder • Secure SSH Node\x1b[0m
+\x1b[1;38;5;51m───────────────────────────────────────────────\x1b[0m
 
-\e[1;37mHostname:\e[0m      \e[1;32m$(hostname)\e[0m
-\e[1;37mUptime:\e[0m        \e[1;32m$(uptime -p)\e[0m
-\e[1;37mLoad:\e[0m          \e[1;32m$(cut -d ' ' -f1-3 /proc/loadavg)\e[0m
-\e[1;37mIP Address:\e[0m    \e[1;32m$(hostname -I | awk '{print \$1}')\e[0m
+\x1b[1;37mHostname:\x1b[0m      \x1b[1;32m$(hostname)\x1b[0m
+\x1b[1;37mUptime:\x1b[0m        \x1b[1;32m$(uptime -p)\x1b[0m
+\x1b[1;37mLoad:\x1b[0m          \x1b[1;32m$(cut -d " " -f1-3 /proc/loadavg)\x1b[0m
+\x1b[1;37mIP Address:\x1b[0m    \x1b[1;32m$(hostname -I | awk "{print \$1}")\x1b[0m
 
-\e[1;33mDashboard:\e[0m     http://carbonforge.techoraye.com/  \e[2m(coming soon)\e[0m
+\x1b[1;33mDashboard:\x1b[0m     http://carbonforge.techoraye.com/  \x1b[2m(coming soon)\x1b[0m
 
-\e[1;36mNeed a package?\e[0m
-\e[1;37mContact:\e[0m       \e[1;32m@techoraye\e[0m on Discord or Telegram.
+\x1b[1;36mNeed a package?\x1b[0m  
+\x1b[1;37mContact:\x1b[0m       \x1b[1;32m@techoraye\x1b[0m on Discord or Telegram.
 
-\e[1;31mUnauthorized access is prohibited.\e[0m
-\e[2mAll activity is logged.\e[0m
-EOF"
-
+\x1b[1;31mUnauthorized access is prohibited.\x1b[0m
+\x1b[2mAll activity is logged.\x1b[0m
+EOF'
+sudo hostnamectl set-hostname CarbonForge
+echo "127.0.1.1   CarbonForge" | sudo tee -a /etc/hosts
 sudo reboot

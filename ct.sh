@@ -99,4 +99,5 @@ case "$1" in
 esac
 EOF
 chmod +x /usr/local/bin/whitelist
+sudo chmod -x /etc/update-motd.d/*
 sudo reboot

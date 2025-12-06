@@ -104,24 +104,24 @@ esac
 EOF
 chmod +x /usr/local/bin/whitelist
 sudo chmod -x /etc/update-motd.d/*
-sudo sh -c 'cat > /etc/motd << "EOF"
-\033[1;38;5;51m───────────────────────────────────────────────\033[0m
-        \033[1;38;5;47mCarbonForge Build Infrastructure\033[0m
-       \033[1;38;5;39mAndroid ROM Builder • Secure SSH Node\033[0m
-\033[1;38;5;51m───────────────────────────────────────────────\033[0m
+sudo bash -c "cat > /etc/motd << 'EOF'
+\e[1;38;5;51m───────────────────────────────────────────────\e[0m
+        \e[1;38;5;47mCarbonForge Build Infrastructure\e[0m
+       \e[1;38;5;39mAndroid ROM Builder • Secure SSH Node\e[0m
+\e[1;38;5;51m───────────────────────────────────────────────\e[0m
 
-\033[1;37mHostname:\033[0m      \033[1;32m$(hostname)\033[0m
-\033[1;37mUptime:\033[0m        \033[1;32m$(uptime -p)\033[0m
-\033[1;37mLoad:\033[0m          \033[1;32m$(cut -d " " -f1-3 /proc/loadavg)\033[0m
-\033[1;37mIP Address:\033[0m    \033[1;32m$(hostname -I | awk "{print \$1}")\033[0m
+\e[1;37mHostname:\e[0m      \e[1;32m$(hostname)\e[0m
+\e[1;37mUptime:\e[0m        \e[1;32m$(uptime -p)\e[0m
+\e[1;37mLoad:\e[0m          \e[1;32m$(cut -d ' ' -f1-3 /proc/loadavg)\e[0m
+\e[1;37mIP Address:\e[0m    \e[1;32m$(hostname -I | awk '{print \$1}')\e[0m
 
-\033[1;33mDashboard:\033[0m     http://carbonforge.techoraye.com/  \033[2m(coming soon)\033[0m
+\e[1;33mDashboard:\e[0m     http://carbonforge.techoraye.com/  \e[2m(coming soon)\e[0m
 
-\033[1;36mNeed a package?\033[0m  
-\033[1;37mContact:\033[0m       \033[1;32m@techoraye\033[0m on Discord or Telegram.
+\e[1;36mNeed a package?\e[0m
+\e[1;37mContact:\e[0m       \e[1;32m@techoraye\e[0m on Discord or Telegram.
 
-\033[1;31mUnauthorized access is prohibited.\033[0m
-\033[2mAll activity is logged.\033[0m
-EOF'
+\e[1;31mUnauthorized access is prohibited.\e[0m
+\e[2mAll activity is logged.\e[0m
+EOF"
 
 sudo reboot
